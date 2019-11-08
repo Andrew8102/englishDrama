@@ -6,6 +6,7 @@
 ## 当前版本
 
 Version 1.1.0
+[Github repo](https://github.com/Andrew8102/englishDrama/)
 
 ### 更新日志
 
