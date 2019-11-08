@@ -1,0 +1,21 @@
+<view>
+  <view id="event_title">当前的活动</view>
+  <view id="event_box" name="{{item.id}}" wx:for='{{event_list}}' wx:key="{{item.id}}">
+    <view id="event_picture_box">
+      <image class="event_picture" src="{{item.picture}}" mode="aspectFill"></image>
+      <view class="event_picture_info">{{item.date}} {{item.location}}</view>
+    </view>
+    <view id="event_info">
+      <view class="event_info_detail">{{item.name}}</view>
+      <navigator url="../list/list?id={{item.event_id}}&password={{item.password}}">
+        <van-button plain type="info">参与</van-button>
+      </navigator>
+    </view>
+  </view>
+</view>
+<view style="height:100rpx;"></view>
+
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="wap-home">活动首页</van-tabbar-item>
+  <van-tabbar-item icon="manager">个人中心</van-tabbar-item>
+</van-tabbar>

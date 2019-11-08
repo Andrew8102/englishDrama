@@ -1,0 +1,44 @@
+/* pages/detail/detail.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.swiper_box {
+  height: 400rpx;
+  width: 100%;
+}
+
+swiper-item image {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.intro {
+  background-color: #fff;
+  padding: 0 0 40rpx 0;
+  box-shadow: 0px 0px 3px #a3a3a3;
+}
+
+.intro_title {
+  margin: 40rpx 40rpx;
+  font-size: 40rpx;
+}
+
+.intro_content {
+  margin: 0 40rpx;
+}
+
+.voter {
+  padding: 40rpx 40rpx;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0px 0px 3px #a3a3a3;
+}
+
+.voter_title {
+  text-align: center;
+  margin:10rpx;
+}

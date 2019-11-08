@@ -1,0 +1,27 @@
+<!--pages/user/user.wxml-->
+<view class="userinfo_me">
+  <button open-type="getUserInfo" class="button_hidden" bindgetuserinfo="onGetUserInfo">
+  <image class="userinfo_avatar" src="{{avatarUrl}}"></image>
+  </button>
+  <view class="userinfo_nickname">{{userInfo.nickName}}</view>
+</view>
+
+
+<van-dialog use-slot title="输入后台登录密码" show="{{ show }}" bind:confirm="onConfirm">
+  <input type="text" placeholder="用户名" auto-focus bindinput="username" value="{{username}}" />
+  <input type="password" placeholder="密码" bindinput="password"  value="{{password}}" />
+</van-dialog>
+
+
+<van-cell-group>
+  <van-cell title="联系我们"  is-link bind:click="onContact"/>
+  <van-cell title="数据管理"  is-link bind:click="backEnd"/>
+  <van-cell title="关于" is-link link-type="navigateTo"
+  url="/pages/about/about"/>
+</van-cell-group>
+
+
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="wap-home">活动首页</van-tabbar-item>
+  <van-tabbar-item icon="manager">个人中心</van-tabbar-item>
+</van-tabbar>

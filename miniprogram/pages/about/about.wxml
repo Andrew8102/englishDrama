@@ -1,0 +1,11 @@
+<!--pages/about/about.wxml-->
+<text>新生英语短剧大赛投票系统</text>
+<text>\r\n</text>
+<text>\r\n</text>
+<text>\r\n</text>
+<text>Version 1.1.0</text>
+<text>Under GPLv3 Licence</text>
+
+  <view class="coder" bindtap="andrew" bindlongtap="clearall"> Designed and coded by Andrew</view>
+
+<text>Copyright by 苏州大学学生科技协会</text>

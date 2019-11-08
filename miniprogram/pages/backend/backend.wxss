@@ -1,0 +1,41 @@
+
+
+.userinfo_me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80rpx 0;
+  background-color: #1989fa;
+}
+
+.userinfo_avatar {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+  z-index: 1;
+  align-self: center;
+  margin-bottom: 20rpx;
+}
+
+.userinfo_nickname {
+  color: #fff;
+  font-size: 40rpx;
+  text-align: center;
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+}
+
+.button_hidden {
+  border: none;
+  background-color: #1989fa;
+  list-style: none;
+}
+
+button::after {
+  border: none;
+}
+
+input {
+  text-align: center;
+  height: 100rpx;
+}

@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "投票界面",
+  "usingComponents": {
+    "van-notice-bar": "../dist/notice-bar/index",
+    "van-button": "../dist/button/index",
+    "van-action-sheet": "../dist/action-sheet/index",
+    "van-cell": "../dist/cell/index",
+    "van-cell-group": "../dist/cell-group/index",
+    "van-submit-bar": "../dist/submit-bar/index",
+    "van-field": "../dist/field/index",
+    "van-stepper": "../dist/stepper/index",
+    "van-dialog": "../dist/dialog/index"
+  }
+}

@@ -1,0 +1,13 @@
+
+<view class="userinfo_me">
+  <view class="userinfo_nickname">数据管理中心</view>
+</view>
+
+<van-cell-group>
+  <van-cell title="发送数据到公共邮箱"  is-link bind:click="openDialog"/>
+</van-cell-group>
+
+<van-dialog use-slot title="请输入电子邮箱地址" show="{{ show }}" bind:confirm="sendmail">
+  <input type="text" placeholder="电子邮箱地址" auto-focus bindinput="mail" value="{{email}}" />
+
+</van-dialog>

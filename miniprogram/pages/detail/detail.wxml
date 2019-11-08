@@ -1,0 +1,40 @@
+<!--pages/detail/detail.wxml-->
+<swiper class="swiper_box" indicator-dots="true" autoplay="3000" interval="5000" duration="500">
+  <swiper-item class="swiper_item" wx:for="{{program.picList}}" wx:key="">
+    <image src="{{item}}" mode="aspectFill"></image>
+  </swiper-item>
+</swiper>
+<van-notice-bar text="当前正在表演的是{{program.school}}的 {{program.title}},请您在此页面为其进行打分。" />
+<view class="intro">
+  <view class="intro_title">节目介绍</view>
+  <view class="intro_content">{{program.intro}}</view>
+
+</view>
+<view class="voter">
+  <view class="voter_title">您可以为其投票</view>
+  <van-button class="voter_button" type="primary" bind:click="onVote" round size="large" disabled="{{button}}">{{buttonText}}</van-button>
+</view>
+
+<van-action-sheet show="{{ show }}" title="评分细则" bind:close="onClose">
+  <view wx:for="{{voteList}}" wx:key="{{voteList.id}}">
+    <van-cell-group title="{{item.title}}">
+      <view wx:for="{{voteList[index].msg}}" wx:key="{{voteList[index].msg.sub_id}}">
+        <van-cell title="{{item.title}}" title-width="350rpx">
+          <van-stepper value="{{ 0 }}" step="1" min="0" max="{{item.max}}" bind:change="onChange" bind:plus="plus" bind:minus="minus" disable-input/>
+        </van-cell>
+      </view>
+    </van-cell-group>
+  </view>
+
+  <view style="height:50rpx;"></view>
+
+  <van-cell >
+    <view slot="title">
+      <van-button class="voter_button" type="info" bind:click="voteSubmit" round size="large">提交总计评分{{sum}}分</van-button>
+    </view>
+  </van-cell>
+  <view style="height:50rpx;"></view>
+
+</van-action-sheet>
+
+<van-dialog id="van-dialog" />

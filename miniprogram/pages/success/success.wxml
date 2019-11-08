@@ -1,0 +1,6 @@
+<!--pages/success/success.wxml-->
+<view >
+<icon type="success" size="250rpx"></icon>
+<view class="text">提交成功</view>
+<van-button class="button" type="info" bind:click="goBack" size="large">返回投票</van-button>
+</view>

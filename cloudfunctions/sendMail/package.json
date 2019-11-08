@@ -1,0 +1,16 @@
+{
+  "name": "sendMail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json2csv": "^4.5.4",
+    "nodemailer": "latest",
+    "wx-server-sdk": "latest"
+  }
+}

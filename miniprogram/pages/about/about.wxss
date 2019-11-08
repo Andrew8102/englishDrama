@@ -1,0 +1,13 @@
+/* pages/about/about.wxss */
+
+page {
+  margin-top: 50%;
+  align-content: center;
+  text-align: center;
+}
+
+.coder {
+  text-decoration: underline;
+  color: #1989fa;
+}
+

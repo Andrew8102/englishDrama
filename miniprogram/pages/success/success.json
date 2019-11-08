@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "投票成功",
+  "usingComponents": {
+    "van-button": "../dist/button/index"
+  }
+}

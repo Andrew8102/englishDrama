@@ -1,0 +1,19 @@
+/* pages/success/success.wxss */
+page{
+  display:flex;
+  justify-content: center;
+  text-align: center;
+}
+
+icon{
+  margin:100rpx 0;
+}
+
+.button{
+  width: 20rpx;
+}
+
+.text{
+  font-size: 40rpx;
+  margin-bottom: 40rpx;
+}
