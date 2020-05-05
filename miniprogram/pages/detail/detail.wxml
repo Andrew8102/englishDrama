@@ -20,7 +20,7 @@
     <van-cell-group title="{{item.title}}">
       <view wx:for="{{voteList[index].msg}}" wx:key="{{voteList[index].msg.sub_id}}">
         <van-cell title="{{item.title}}" title-width="350rpx">
-          <van-stepper value="{{ 0 }}" step="1" min="0" max="{{item.max}}" bind:change="onChange" bind:plus="plus" bind:minus="minus" disable-input/>
+          <van-stepper value="{{ 0 }}" step="1" min="0" max="{{item.max}}" bind:change="onChange" bind:plus="plus" bind:minus="minus"/>
         </van-cell>
       </view>
     </van-cell-group>

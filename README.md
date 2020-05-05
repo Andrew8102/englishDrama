@@ -5,9 +5,11 @@
 
 ## 当前版本
 
-Version 1.2.1
+Version 1.2.8
 
 ### 更新日志
+
+2020.5.5 1.2.8 才发现线上版本的代码被我删掉了，非常难过，补齐代码, 主页reverse()使得最新活动排在最上面，修改readme的数据实例
 
 2019.11.25 1.2.1 改csv为excel模块导出
 
@@ -39,7 +41,7 @@ eventList 表
   "location": "苏州大学存菊堂",
   "picture": "https://moechu.cn/usr/uploads/2019/10/2135419809.jpg",
   "password": 1234
-}
+},
 {
   "name": "第20届新生英语短剧大赛半决赛",
   "date": "2019年11月11日",
@@ -57,62 +59,22 @@ eventCollege
     "event_id":1,
     "college_id": 1,
     "title": "天气之子",
+    "intro":"这是一部好电影",
     "school": "东吴商学院",
-    "image": "https://moechu.cn/usr/uploads/2019/11/906212061.jpg"
-} {
+    "picList": [
+      "https://moechu.cn/usr/uploads/2019/11/906212061.jpg"
+      ,"https://moechu.cn/usr/uploads/2019/11/906212061.jpg"
+    ]
+},{
     "event_id":1,
     "college_id": 2,
     "title": "天野阳菜粉丝会",
+    "intro":"这是一部好电影",
     "school": "体育学院",
-    "image": "https://moechu.cn/usr/uploads/2019/11/906212061.jpg"
-} {
-    "event_id":1,
-    "college_id": 3,
-    "title": "你的名字是宫本茂",
-    "school": "电子信息学院",
-    "image": "https://moechu.cn/usr/uploads/2019/11/906212061.jpg"
-} {
-    "event_id":1,
-    "college_id": 4,
-    "title": "新海诚好棒",
-    "school": "王建法学院",
-    "image": "https://moechu.cn/usr/uploads/2019/11/906212061.jpg"
-} {
-    "event_id":1,
-    "college_id": 5,
-    "title": "Radwimps",
-    "school": "音乐学院",
-    "image": "https://moechu.cn/usr/uploads/2019/11/906212061.jpg"
-} {
-    "event_id":2,
-    "college_id": 1,
-    "title": "天气之子",
-    "school": "东吴商学院",
-    "image": "https://moechu.cn/usr/uploads/2019/11/906212061.jpg"
-} {
-    "event_id":2,
-    "college_id": 2,
-    "title": "天野阳菜粉丝会",
-    "school": "体育学院",
-    "image": "https://moechu.cn/usr/uploads/2019/11/906212061.jpg"
-} {
-    "event_id":2,
-    "college_id": 3,
-    "title": "你的名字是宫本茂",
-    "school": "电子信息学院",
-    "image": "https://moechu.cn/usr/uploads/2019/11/906212061.jpg"
-} {
-    "event_id":2,
-    "college_id": 4,
-    "title": "新海诚好棒",
-    "school": "王建法学院",
-    "image": "https://moechu.cn/usr/uploads/2019/11/906212061.jpg"
-} {
-    "event_id":2,
-    "college_id": 5,
-    "title": "Radwimps",
-    "school": "音乐学院",
-    "image": "https://moechu.cn/usr/uploads/2019/11/906212061.jpg"
+    "picList": [
+      "https://moechu.cn/usr/uploads/2019/11/906212061.jpg",
+      "https://moechu.cn/usr/uploads/2019/11/906212061.jpg"
+    ]
 }
 ```
 

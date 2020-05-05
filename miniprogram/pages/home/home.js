@@ -23,7 +23,7 @@ Page({
       name: 'getEvent',
       success: res => {
         this.setData({
-          event_list: res.result.data
+          event_list: res.result.data.reverse()
         })
       },
       fail: err => {

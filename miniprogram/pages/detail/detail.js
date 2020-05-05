@@ -99,7 +99,7 @@ Page({
   },
 
   onChange(e) {
-    console.log(e.detail)
+    console.log("改变值为"+e.detail)
   },
 
   voteSubmit(e) {
@@ -159,6 +159,9 @@ Page({
       sum: that.data.sum - 1
     })
   },
+
+  //焦点就删掉
+  //失去焦点就加上
 
   /**
    * 生命周期函数--监听页面初次渲染完成
