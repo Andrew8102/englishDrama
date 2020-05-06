@@ -1,6 +1,6 @@
 <view>
   <view id="event_title">当前的活动</view>
-  <view id="event_box" name="{{item.id}}" wx:for='{{event_list}}' wx:key="{{item.id}}">
+  <view id="event_box" name="{{item._id}}" wx:for='{{event_list}}' wx:key="_id">
     <view id="event_picture_box">
       <image class="event_picture" src="{{item.picture}}" mode="aspectFill"></image>
       <view class="event_picture_info">{{item.date}} {{item.location}}</view>

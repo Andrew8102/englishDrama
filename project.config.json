@@ -21,7 +21,7 @@
 		},
 		"uglifyFileName": true
 	},
-	"appid": "",
+	"appid": "wx24b308da60a1375b",
 	"projectname": "englishDrama",
 	"libVersion": "2.11.0",
 	"simulatorType": "wechat",
@@ -60,6 +60,14 @@
 					"id": -1,
 					"name": "pages/backend/backend",
 					"pathName": "pages/backend/backend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "detail",
+					"pathName": "pages/detail/detail",
+					"query": "college_id=1&event_id=3",
 					"scene": null
 				}
 			]

@@ -4,9 +4,9 @@
     <image src="{{item}}" mode="aspectFill"></image>
   </swiper-item>
 </swiper>
-<van-notice-bar text="当前正在表演的是{{program.school}}的 {{program.title}},请您在此页面为其进行打分。" />
+<van-notice-bar text="当前正在展示的是{{program.school}}的 {{program.title}},请您在此页面为其进行打分。" />
 <view class="intro">
-  <view class="intro_title">节目介绍</view>
+  <view class="intro_title">内容介绍</view>
   <view class="intro_content">{{program.intro}}</view>
 
 </view>
@@ -20,7 +20,7 @@
     <van-cell-group title="{{item.title}}">
       <view wx:for="{{voteList[index].msg}}" wx:key="{{voteList[index].msg.sub_id}}">
         <van-cell title="{{item.title}}" title-width="350rpx">
-          <van-stepper value="{{ 0 }}" step="1" min="0" max="{{item.max}}" bind:change="onChange" bind:plus="plus" bind:minus="minus"/>
+          <van-stepper value="{{ 0 }}" step="1" min="0" max="{{item.max}}" bind:change="onChange" bind:plus="plus" bind:minus="minus" bind:focus="focus" bind:blur="blur"/>
         </van-cell>
       </view>
     </van-cell-group>
