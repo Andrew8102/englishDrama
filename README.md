@@ -41,7 +41,7 @@ eventList 表
   "location": "苏州大学存菊堂",
   "picture": "https://moechu.cn/usr/uploads/2019/10/2135419809.jpg",
   "password": 1234
-},
+}
 {
   "name": "第20届新生英语短剧大赛半决赛",
   "date": "2019年11月11日",
@@ -65,7 +65,8 @@ eventCollege
       "https://moechu.cn/usr/uploads/2019/11/906212061.jpg"
       ,"https://moechu.cn/usr/uploads/2019/11/906212061.jpg"
     ]
-},{
+}
+{
     "event_id":1,
     "college_id": 2,
     "title": "天野阳菜粉丝会",
