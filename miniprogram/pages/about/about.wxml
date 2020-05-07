@@ -3,7 +3,7 @@
 <text>\r\n</text>
 <text>\r\n</text>
 <text>\r\n</text>
-<text>Version 1.2.9</text>
+<text>Version 1.3.0</text>
 <text>Under GPLv3 Licence</text>
 
   <view class="coder" bindtap="andrew" bindlongtap="clearall"> Designed and coded by Andrew</view>
