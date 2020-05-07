@@ -21,7 +21,8 @@ Page({
     let that = this
     that.setData({
       event_id: options.event_id,
-      college_id: options.college_id
+      college_id: options.college_id,
+      event_name: options.event_name
     })
     wx.cloud.callFunction({
       name: 'getRule',
@@ -99,7 +100,7 @@ Page({
   },
 
   onChange(e) {
-    console.log("改变值为" + e.detail.value)
+    console.log("改变值为：" + e.detail)
   },
 
   voteSubmit(e) {
@@ -117,9 +118,12 @@ Page({
           college_id: parseInt(that.data.college_id),
           mark: parseInt(that.data.sum),
           school: that.data.program.school,
-          voter: wx.getStorageSync('openid'),
+          voter_openid: wx.getStorageSync('openid'),
           nickName: userInfo.nickName,
-          title: that.data.program.title
+          title: that.data.program.title,
+          truename: wx.getStorageSync('truename'),
+          userSchool: wx.getStorageSync('userSchool'),
+          event_name:that.data.event_name
         },
         success: res => {
           console.log("成功投票")

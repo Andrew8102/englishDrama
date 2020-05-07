@@ -3,9 +3,15 @@
   <button open-type="getUserInfo" class="button_hidden" bindgetuserinfo="onGetUserInfo">
   <image class="userinfo_avatar" src="{{avatarUrl}}"></image>
   </button>
-  <view class="userinfo_nickname">{{userInfo.nickName}}</view>
+  <view class="userinfo_school">{{userSchool}}</view>
+  <view class="userinfo_nickname">{{truename}}</view>
+  
 </view>
 
+<van-dialog use-slot title="请输入您的个人信息" show="{{ show2nd }}" bind:confirm="onConfirm2">
+  <input type="text" placeholder="学院" auto-focus bindinput="userSchool" value="{{userSchool}}" />
+  <input type="text" placeholder="真实姓名" bindinput="truename"  value="{{truename}}" />
+</van-dialog>
 
 <van-dialog use-slot title="输入后台登录密码" show="{{ show }}" bind:confirm="onConfirm">
   <input type="text" placeholder="用户名" auto-focus bindinput="username" value="{{username}}" />
@@ -20,6 +26,7 @@
   url="/pages/about/about"/>
 </van-cell-group>
 
+<van-dialog id="van-dialog" />
 
 <van-tabbar active="{{ active }}" bind:change="onChange">
   <van-tabbar-item icon="wap-home">活动首页</van-tabbar-item>

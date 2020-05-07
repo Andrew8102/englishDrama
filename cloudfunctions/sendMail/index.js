@@ -28,7 +28,7 @@ Date.prototype.Format = function(fmt) {
   var o = {
     "M+": this.getMonth() + 1,
     "d+": this.getDate(),
-    "h+": this.getHours(),
+    "h+": this.getHours()+8,
     "m+": this.getMinutes(),
     "s+": this.getSeconds(),
     "q+": Math.floor((this.getMonth() + 3) / 3),
@@ -54,7 +54,7 @@ var config = {
   port: 465, //网易邮箱端口 25
   auth: {
     user: 'XXXX@163.com', //邮箱账号
-    pass: 'XXX' //邮箱的授权码
+    pass: 'XXXX' //邮箱的授权码
   }
 }
 // 创建一个SMTP客户端对象
@@ -107,24 +107,30 @@ exports.main = async(event, context) => {
     let row = [
       '_id唯一序号',
       'event_id活动id',
+      'event_name活动名称',
       'school学院',
       'title标题',
       'mark评委打分',
       'nickName评委微信昵称',
       'voter_openid评委微信唯一id',
-      'datetime提交时间'
+      'datetime提交时间',
+      'truename提交者真实姓名',
+      'userSchool提交者所在学院'
     ]; //表属性
     alldata.push(row);
     for (let key in userdata) {
       let arr = [];
       arr.push(userdata[key]._id);
       arr.push(userdata[key].event_id);
+      arr.push(userdata[key].event_name);
       arr.push(userdata[key].school);
       arr.push(userdata[key].title);
       arr.push(userdata[key].mark);
       arr.push(userdata[key].nickName);
       arr.push(userdata[key].voter_openid);
       arr.push(userdata[key].datetime);
+      arr.push(userdata[key].truename);
+      arr.push(userdata[key].userSchool);
       alldata.push(arr)
     }
     //console.log(alldata)
@@ -161,12 +167,12 @@ exports.main = async(event, context) => {
   // console.log(csv)
   // 创建一个邮件对象
   var htmltext =
-    '<p>您好，您的投票数据已经导出</p> <p>请点击下方链接下载excel文件</p> <p>字段说明：</p> <figure><table><thead><tr><th>字段名称</th><th>字段说明</th></tr></thead><tbody><tr><td>_id</td><td>本投票唯一编号</td></tr><tr><td>event_id</td><td>活动编号</td></tr><tr><td>school</td><td>学院名</td></tr><tr><td>title</td><td>团队演出标题</td></tr><tr><td>mark</td><td>投票的打分</td></tr><tr><td>nickName</td><td>提交者的微信昵称</td></tr><tr><td>voter_openid</td><td>提交者微信唯一识别号</td></tr><tr><td>datetime</td><td>提交者提交投票时间</td></tr></tbody></table></figure> <p>投票数据（请点击下载）：</p>' +
+    '<p>您好，您的投票数据已经导出</p> <p>请点击下方链接下载excel文件</p> <p>字段说明：</p> <figure><table><thead><tr><th>字段名称</th><th>字段说明</th></tr></thead><tbody><tr><td>_id</td><td>本投票唯一编号</td></tr><tr><td>event_id</td><td>活动编号</td></tr><tr><td>event_name</td><td>活动名称</td></tr><tr><td>school</td><td>学院名</td></tr><tr><td>title</td><td>团队演出标题</td></tr><tr><td>mark</td><td>投票的打分</td></tr><tr><td>nickName</td><td>提交者的微信昵称</td></tr><tr><td>voter_openid</td><td>提交者微信唯一识别号</td></tr><tr><td>datetime</td><td>提交者提交投票时间</td></tr><tr><td>truename</td><td>提交者真实姓名</td></tr><tr><td>userSchool</td><td>提交者所在学院</td></tr></tbody></table></figure> <p>投票数据（请点击下载）：</p>' +
     downloadUrl
   console.log(htmltext)
   var mail = {
     // 发件人
-    from: '新英投票系统 <XXX@163.com>',
+    from: '新英投票系统 <XXXX@163.com>',
     // 主题
     subject: '投票评分数据',
     // 收件人

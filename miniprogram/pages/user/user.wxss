@@ -25,6 +25,13 @@
   text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
 }
 
+.userinfo_school {
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+}
+
 .button_hidden {
   border: none;
   background-color: #1989fa;

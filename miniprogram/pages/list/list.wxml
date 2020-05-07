@@ -4,7 +4,7 @@
 </van-dialog>
 
 <view class="candidate_list">
-  <navigator wx:for="{{college_list}}" url="../detail/detail?college_id={{item.college_id}}&event_id={{item.event_id}}" wx:key="college_id" class="candidate_list_one">
+  <navigator wx:for="{{college_list}}" url="../detail/detail?college_id={{item.college_id}}&event_id={{item.event_id}}&event_name={{event_name}}" wx:key="college_id" class="candidate_list_one">
     <view class="candidate_list_image">
       <image src="{{item.picList[0]}}" class="candidate_list_image" mode="aspectFill"></image>
       <view wx:if="{{vote.isVote(item.college_id,voteArr)}}" class="candidate_vote">已投票</view>

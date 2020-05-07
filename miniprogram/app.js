@@ -2,8 +2,8 @@
 App({
   //最开始的时候请自行修改此处的用户名密码，用于登陆数据管理后台进行邮件收发
   globalData: {
-    username: 'xxx@163.com',
-    password: 'xxx',
+    username: 'XXXX@163.com',
+    password: 'XXXX',
   },
 
   onLaunch: function () {

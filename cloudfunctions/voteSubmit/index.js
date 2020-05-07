@@ -9,7 +9,7 @@ Date.prototype.Format = function(fmt) {
   var o = {
     "M+": this.getMonth() + 1,
     "d+": this.getDate(),
-    "h+": this.getHours(),
+    "h+": this.getHours()+8,
     "m+": this.getMinutes(),
     "s+": this.getSeconds(),
     "q+": Math.floor((this.getMonth() + 3) / 3),
@@ -30,13 +30,16 @@ exports.main = async(event, context) => {
       // data 字段表示需新增的 JSON 数据
       data: {
         event_id: event.event_id,
-        school_id: event.school_id,
+        school_id: event.college_id,
         mark: event.mark,
         school: event.school,
         title: event.title,
-        voter_openid: event.voter,
+        voter_openid: event.voter_openid,
         nickName: event.nickName,
-        datetime: d
+        datetime: d,
+        truename:event.truename,
+        userSchool:event.userSchool,
+        event_name:event.event_name
       }
     })
   } catch (e) {

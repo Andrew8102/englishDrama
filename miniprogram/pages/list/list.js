@@ -20,6 +20,7 @@ Page({
     let that = this
     wx.showLoading()
     that.setData({
+      event_name:options.event_name,
       id: options.id,
       voteArr: wx.getStorageSync('vote_'+options.id)
     })
