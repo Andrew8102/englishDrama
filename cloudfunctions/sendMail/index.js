@@ -53,7 +53,7 @@ var config = {
   host: 'smtp.163.com', //网易163邮箱 smtp.163.com
   port: 465, //网易邮箱端口 25
   auth: {
-    user: 'XXX@163.com', //邮箱账号
+    user: 'XXXX@163.com', //邮箱账号
     pass: 'XXX' //邮箱的授权码
   }
 }
