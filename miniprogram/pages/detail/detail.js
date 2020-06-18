@@ -7,7 +7,7 @@ Page({
    */
   data: {
     show: false,
-    buttonText: "开始投票",
+    buttonText: "参与活动",
     button: false,
     sum: 0,
     program: {},
@@ -106,49 +106,57 @@ Page({
   voteSubmit(e) {
     let that = this
     let userInfo = wx.getStorageSync('userInfo')
-    Dialog.confirm({
-      title: '确定提交吗',
-      message: '您当前为 ' + that.data.program.school + ' ' + that.data.program.title + ' 的评分为 ' + that.data.sum + ' 分,提交后评分无法更改'
-    }).then(() => {
-      // on confirm
-      wx.cloud.callFunction({
-        name: 'voteSubmit',
-        data: {
-          event_id: parseInt(that.data.event_id),
-          college_id: parseInt(that.data.college_id),
-          mark: parseInt(that.data.sum),
-          school: that.data.program.school,
-          voter_openid: wx.getStorageSync('openid'),
-          nickName: userInfo.nickName,
-          title: that.data.program.title,
-          truename: wx.getStorageSync('truename'),
-          userSchool: wx.getStorageSync('userSchool'),
-          event_name:that.data.event_name
-        },
-        success: res => {
-          console.log("成功投票")
-          if (wx.getStorageSync('vote_' + that.data.program.event_id)) {
-            var hasMarkedArr = wx.getStorageSync('vote_' + that.data.program.event_id);
-          } else {
-            var hasMarkedArr = Array()
+    if (that.data.sum != null) {
+      Dialog.confirm({
+        title: '确定提交吗',
+        message: '您当前为 ' + that.data.program.school + ' ' + that.data.program.title + ' 的评分为 ' + that.data.sum + ' 分,提交后评分无法更改'
+      }).then(() => {
+        // on confirm
+        wx.cloud.callFunction({
+          name: 'voteSubmit',
+          data: {
+            event_id: parseInt(that.data.event_id),
+            college_id: parseInt(that.data.college_id),
+            mark: parseInt(that.data.sum),
+            school: that.data.program.school,
+            voter_openid: wx.getStorageSync('openid'),
+            nickName: userInfo.nickName,
+            title: that.data.program.title,
+            truename: wx.getStorageSync('truename'),
+            userSchool: wx.getStorageSync('userSchool'),
+            event_name: that.data.event_name
+          },
+          success: res => {
+            console.log("成功投票")
+            if (wx.getStorageSync('vote_' + that.data.program.event_id)) {
+              var hasMarkedArr = wx.getStorageSync('vote_' + that.data.program.event_id);
+            } else {
+              var hasMarkedArr = Array()
+            }
+            hasMarkedArr.push(that.data.program.college_id)
+            wx.setStorageSync('vote_' + that.data.program.event_id, hasMarkedArr)
+            wx.redirectTo({
+              url: '../success/success',
+            })
+          },
+          fail: err => {
+            wx.showToast({
+              icon: 'none',
+              title: '提交失败',
+            })
+            console.error('[云函数] [voteSubmit] 调用失败：', err)
           }
-          hasMarkedArr.push(that.data.program.college_id)
-          wx.setStorageSync('vote_' + that.data.program.event_id, hasMarkedArr)
-          wx.redirectTo({
-            url: '../success/success',
-          })
-        },
-        fail: err => {
-          wx.showToast({
-            icon: 'none',
-            title: '提交失败',
-          })
-          console.error('[云函数] [voteSubmit] 调用失败：', err)
-        }
-      })
-    }).catch(() => {
-      // on cancel
-    });
+        })
+      }).catch(() => {
+        // on cancel
+      });
+    }else{
+      Dialog.confirm({
+        title: '投票出错',
+        message: '请重新进入本页面评分'
+      }).then(() => {})
+    }
+
   },
   plus(e) {
     let that = this

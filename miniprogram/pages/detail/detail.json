@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "投票界面",
+  "navigationBarTitleText": "活动界面",
   "usingComponents": {
     "van-notice-bar": "../../dist/notice-bar/index",
     "van-button": "../../dist/button/index",

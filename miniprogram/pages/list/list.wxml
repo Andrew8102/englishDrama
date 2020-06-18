@@ -3,17 +3,33 @@
   <input type="number" placeholder="在此输入4位数授权码" auto-focus="" bindinput="onChange" value="{{authCode}}" />
 </van-dialog>
 
-<view class="candidate_list">
-  <navigator wx:for="{{college_list}}" url="../detail/detail?college_id={{item.college_id}}&event_id={{item.event_id}}&event_name={{event_name}}" wx:key="college_id" class="candidate_list_one">
-    <view class="candidate_list_image">
-      <image src="{{item.picList[0]}}" class="candidate_list_image" mode="aspectFill"></image>
-      <view wx:if="{{vote.isVote(item.college_id,voteArr)}}" class="candidate_vote">已投票</view>
-    </view>
-    <view class="candidate_list_title">{{item.title}}</view>
-    <view class="candidate_list_school">{{item.school}}</view>
-  </navigator>
+<view wx:if="{{type==0}}">
+  <view class="candidate_list">
+    <navigator wx:for="{{college_list}}" url="../detail/detail?college_id={{item.college_id}}&event_id={{item.event_id}}&event_name={{event_name}}" wx:key="college_id" class="candidate_list_one">
+      <view class="candidate_list_image">
+        <image src="{{item.picList[0]}}" class="candidate_list_image" mode="aspectFill"></image>
+        <view wx:if="{{vote.isVote(item.college_id,voteArr)}}" class="candidate_vote">已参与</view>
+      </view>
+      <view class="candidate_list_title">{{item.title}}</view>
+      <view class="candidate_list_school">{{item.school}}</view>
+    </navigator>
+  </view>
 </view>
-
+<view wx:elif="{{type==1}}">
+  <view class="candidate_list">
+  <checkbox-group>
+    <navigator wx:for="{{college_list}}" url="../detail/detail?college_id={{item.college_id}}&event_id={{item.event_id}}&event_name={{event_name}}" wx:key="college_id" class="candidate_list_one">
+      <view class="candidate_list_image">
+        <image src="{{item.picList[0]}}" class="candidate_list_image" mode="aspectFill"></image>
+        <view wx:if="{{vote.isVote(item.college_id,voteArr)}}" class="candidate_vote">已参与</view>
+      </view>
+      <view class="candidate_list_title">{{item.title}}</view>
+      <view class="candidate_list_school">{{item.school}}</view>
+      <checkbox>1</checkbox>
+    </navigator>
+    </checkbox-group>
+  </view>
+</view>
 <wxs module="vote">
 var isVote = function(college_id,array) {
   for (var i = 0; i < array.length; ++i) {

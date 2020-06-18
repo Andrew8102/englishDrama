@@ -53,8 +53,8 @@ var config = {
   host: 'smtp.163.com', //网易163邮箱 smtp.163.com
   port: 465, //网易邮箱端口 25
   auth: {
-    user: 'XXXX@163.com', //邮箱账号
-    pass: 'XXXX' //邮箱的授权码
+    user: 'xzy565143480@163.com', //邮箱账号
+    pass: '582183isbest' //邮箱的授权码
   }
 }
 // 创建一个SMTP客户端对象
@@ -172,7 +172,7 @@ exports.main = async(event, context) => {
   console.log(htmltext)
   var mail = {
     // 发件人
-    from: '新英投票系统 <XXXX@163.com>',
+    from: '新英投票系统 <xzy565143480@163.com>',
     // 主题
     subject: '投票评分数据',
     // 收件人

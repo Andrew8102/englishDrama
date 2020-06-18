@@ -2,10 +2,11 @@
 App({
   //最开始的时候请自行修改此处的用户名密码，用于登陆数据管理后台进行邮件收发
   globalData: {
-    username: 'XXXX@163.com',
-    password: 'XXXX',
+    username: 'sudakxhd@163.com',
+    password: 'huodongbu',
   },
-
+  //忘了改回来了。。。上面都是XXXX
+  
   onLaunch: function () {
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')

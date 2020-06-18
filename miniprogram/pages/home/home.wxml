@@ -7,7 +7,7 @@
     </view>
     <view id="event_info">
       <view class="event_info_detail">{{item.name}}</view>
-      <navigator url="../list/list?id={{item.event_id}}&password={{item.password}}&event_name={{item.name}}">
+      <navigator url="../list/list?id={{item.event_id}}&password={{item.password}}&event_name={{item.name}}&type={{item.type}}">
         <van-button plain type="info">参与</van-button>
       </navigator>
     </view>

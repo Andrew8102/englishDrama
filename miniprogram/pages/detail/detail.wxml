@@ -4,18 +4,18 @@
     <image src="{{item}}" mode="aspectFill"></image>
   </swiper-item>
 </swiper>
-<van-notice-bar text="当前正在展示的是{{program.school}}的 {{program.title}},请您在此页面为其进行打分。" />
+<van-notice-bar text="当前正在展示的是{{program.school}}的 {{program.title}},请您在此页面参与本活动。" />
 <view class="intro">
   <view class="intro_title">内容介绍</view>
   <view class="intro_content">{{program.intro}}</view>
 
 </view>
 <view class="voter">
-  <view class="voter_title">您可以为其投票</view>
+  <view class="voter_title">点击即可参与</view>
   <van-button class="voter_button" type="primary" bind:click="onVote" round size="large" disabled="{{button}}">{{buttonText}}</van-button>
 </view>
 
-<van-action-sheet show="{{ show }}" title="评分细则" bind:close="onClose">
+<van-action-sheet show="{{ show }}" title="活动细则" bind:close="onClose">
   <view wx:for="{{voteList}}" wx:key="{{voteList.id}}">
     <van-cell-group title="{{item.title}}">
       <view wx:for="{{voteList[index].msg}}" wx:key="{{voteList[index].msg.sub_id}}">
@@ -30,7 +30,7 @@
 
   <van-cell >
     <view slot="title">
-      <van-button class="voter_button" type="info" bind:click="voteSubmit" round size="large">提交总计评分{{sum}}分</van-button>
+      <van-button class="voter_button" type="info" bind:click="voteSubmit" round size="large">提交总计{{sum}}分</van-button>
     </view>
   </van-cell>
   <view style="height:50rpx;"></view>
